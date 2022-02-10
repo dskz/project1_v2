@@ -18,6 +18,10 @@ This project builds a three-tier network configuration in AWS.We will create a t
 3. A text editor such as Atom, Visual Studio Code, or PyCharm, with the Terraform plug-in installed
 4. Create a new directory for the four Terraform source files we will be working with: provider.tf,vpc.tf, asg.tf, db.tf, variable.tf and wordpress.sh
 
+## Three-tier Architecture Diagram!
+
+![Untitled Diagram-Page-1 drawio](https://user-images.githubusercontent.com/92490823/153505957-6c81aa4b-4b09-4bdb-9c59-e6f9cce9a273.png)
+
 ## provider.tf
 
 AWS will be our plug-in provider, so the top of provider.tf should include:
@@ -236,5 +240,3 @@ To delete the Application,
 ```
 terraform destroy 
 ```
-
-
