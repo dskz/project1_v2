@@ -14,29 +14,29 @@ This project builds a three-tier network configuration in AWS.We will create a t
 
 ### Table of Contents
 
- [Architecture](https://github.com/dskz/project1_v2/edit/master/README.md#architecture)
+* [Architecture](https://github.com/dskz/project1_v2/edit/master/README.md#architecture)
  
- [Prerequisites](https://github.com/dskz/project1_v2/edit/master/README.md#prerequisites) 
+* [Prerequisites](https://github.com/dskz/project1_v2/edit/master/README.md#prerequisites) 
  
- [provider.tf](https://github.com/dskz/project1_v2/edit/master/README.md#providertf)  
+* [provider.tf](https://github.com/dskz/project1_v2/edit/master/README.md#providertf)  
  
- [vpc.tf](https://github.com/dskz/project1_v2/edit/master/README.md#vpctf)  
+* [vpc.tf](https://github.com/dskz/project1_v2/edit/master/README.md#vpctf)  
  
- [asg.tf](https://github.com/dskz/project1_v2/edit/master/README.md#asgtf) 
+* [asg.tf](https://github.com/dskz/project1_v2/edit/master/README.md#asgtf) 
  
- [db.tf](https://github.com/dskz/project1_v2/edit/master/README.md#dbtf) 
+* [db.tf](https://github.com/dskz/project1_v2/edit/master/README.md#dbtf) 
  
- [route53.tf](https://github.com/dskz/project1_v2/edit/master/README.md#route53tf)  
+* [route53.tf](https://github.com/dskz/project1_v2/edit/master/README.md#route53tf)  
  
- [variables.tf](https://github.com/dskz/project1_v2/edit/master/README.md#rvariabletf) 
+* [variables.tf](https://github.com/dskz/project1_v2/edit/master/README.md#rvariabletf) 
  
- [wordpress.sh](https://github.com/dskz/project1_v2/edit/master/README.md#wordpresssh)  
+* [wordpress.sh](https://github.com/dskz/project1_v2/edit/master/README.md#wordpresssh)  
   
- [Initilazing the Terraform]https://github.com/dskz/project1_v2/edit/master/README.md#initilazing-the-terraform)
+* [Initilazing the Terraform](https://github.com/dskz/project1_v2/edit/master/README.md#initilazing-the-terraform)
  
- [Deleting the Resources(https://github.com/dskz/project1_v2/edit/master/README.md#deleting-the-resources) 
- 
- [Notes](https://github.com/dskz/project1_v2/edit/master/README.md#notes)  
+* [Deleting the Resources](https://github.com/dskz/project1_v2/edit/master/README.md#deleting-the-resources) 
+
+* [Notes](https://github.com/dskz/project1_v2/edit/master/README.md#notes)  
  
 ## Architecture
 
@@ -283,7 +283,7 @@ You can check any syntax by using:
 terraform validate 
 
 ```
-you can see all changes on terraform plan then create with terraform apply commands:
+You can see all changes on terraform plan then create with terraform apply commands:
 
 ```
 terraform plan  --auto-approve
