@@ -12,6 +12,36 @@ This project builds a three-tier network configuration in AWS.We will create a t
 * Application load balancer
 * Route53
 
+### Table of Contents
+
+ [Architecture](https://github.com/dskz/project1_v2/edit/master/README.md#architecture)
+ 
+ [Prerequisites](https://github.com/dskz/project1_v2/edit/master/README.md#prerequisites) 
+ 
+ [Provider](https://github.com/dskz/project1_v2/edit/master/README.md#providertf)  
+ 
+ [Virtual Private Cloud](https://github.com/dskz/project1_v2/edit/master/README.md#vpctf)  
+ 
+ [Auto Scaling Group/Load Balancer](https://github.com/dskz/project1_v2/edit/master/README.md#asgtf) 
+ 
+ [Database](https://github.com/dskz/project1_v2/edit/master/README.md#dbtf) 
+ 
+ [Route53](https://github.com/dskz/project1_v2/edit/master/README.md#route53tf)  
+ 
+ [Variables](https://github.com/dskz/project1_v2/edit/master/README.md#rvariabletf) 
+ 
+ [Database Userdata](https://github.com/dskz/project1_v2/edit/master/README.md#wordpresssh)  
+  
+ [Initilaze Terraform](https://github.com/dskz/project1_v2/edit/master/README.md#initilazing-the-terraform)
+ 
+ [Deleting the Resources](https://github.com/dskz/project1_v2/edit/master/README.md#deleting-the-resources) 
+ 
+ [Notes](https://github.com/dskz/project1_v2/edit/master/README.md#notes)  
+ 
+## Architecture
+
+![alt text](https://user-images.githubusercontent.com/92490823/153505957-6c81aa4b-4b09-4bdb-9c59-e6f9cce9a273.png "AWS Three-tier Architecture")
+
 ## Prerequisites
 
 1. The AWS CLI configured with AWS account credentials, and a familiarity with AWS cloud architecture
@@ -28,9 +58,10 @@ provider "aws" {
   region = var.region
 }
 ```
+
 ## vpc.tf
 
-This code will create a VPC along with 3 Public and 6 Private subnets,Route Tables to configure traffic through IGW to Public Subnets and NG to Private Subnets and security grups for loadbalancer, database and server
+This code will create a VPC along with 3 Public and 6 Private subnets, IGW to Public Subnets and NG to Private Subnets. Route Tables to configure traffic for Subnets and Security Groups. Security Groups which will set of firewall rules for Load Balancer, Database and Server. It will open neccesary ports to control the traffic to your Load Balancer through your VPC
 
 ```
 data "aws_availability_zones" "available" {}
@@ -81,9 +112,10 @@ module "db_sg" {
 }
 
 ```
+
 ## asg.tf
 
-Launch template along with ASG and ALB and Security grouop for database, load balancer and webserver will be created
+Load Balancer works with launch template Auto Scaling Group to distribute incoming traffic across your targets to Servers (healthy Amazon EC2 instances) and Database. This increases the scalability and availability of your application. You can enable Load Balancer within multiple availability zones to increase the fault tolerance of your applications.
 
 ```   
 data "aws_ami" "centos" {
@@ -150,7 +182,7 @@ module "alb" {
 
 ## db.tf
 
-Rds instance supported by MySQL will be created
+Database hosted inside private subnets to ensure high availability.Security group inbound rules only allow port 3306 for web tier.
 
 ```
 resource "random_password" "password" { #A
@@ -172,7 +204,10 @@ resource "aws_db_instance" "default" {
   skip_final_snapshot  = true
 }
 ```
+
 ## route53.tf
+
+Route53 records let you route traffic to selected AWS resources inside the VPC
 
 ```
 resource "aws_route53_record" "www" {
@@ -185,6 +220,8 @@ records = [aws_db_instance.default.address]
 ```
 
 ## variable.tf
+
+Variables allow you to write configuration that is flexible and easier to re-use. In this code you will find variables for namespace, region, ssh_keypair , cluster_engine.
 
 ```
 variable "namespace" {
@@ -206,7 +243,10 @@ variable "cluster_engine" {
   default     = "MySQL"
 }
 ```
+
 ## wordpress.sh
+
+This code is userdata for creating database instance
 
 ```
 #!/bin/bash
@@ -231,22 +271,36 @@ sudo systemctl enable httpd
 
 ## Initilazing the Terraform
 
-To install and create the resources:
+To install and create the resources: 1-Before creating all so you need to initialise Terraform which needs to be done only once in a folder.Initialise Terraform with the following command:
 
 ```
 terraform init
-terraform apply 
 
 ```
+You can check any syntax by using:
 
-## Deleting the Resoruces
+```
+terraform validate 
 
-To delete the Application,
+```
+you can see all changes on terraform plan then create with terraform apply commands:
 
-* Destroy Terraform configuration:
+```
+terraform plan  --auto-approve
+terraform apply --auto-approve
+```
+
+## Deleting the Resources
+
+To delete the Application:
 
 ```
 terraform destroy 
+
 ```
 
+### Notes
+
+*  Please make sure modify correct path of user_data under webserver aws launch template resources in asg.tf
+*  Default region is "us-east-1". Modify the default region in provider.tf
 
