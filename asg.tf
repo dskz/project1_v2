@@ -58,6 +58,20 @@ module "alb" {
     }
   ]
 }
+output "template" {
+  value       = aws_launch_template.webserver.instance_type
+}
+output "asg" {
+  value       = aws_autoscaling_group.webserver.name
+}
+output "lb" {
+  value       = module.alb.this_lb_dns_name
+}
+
+
+
+
+
 # resource "aws_security_group" "allow_tls" {
 #   name        = "allow_tls"
 #   description = "Allow TLS inbound traffic"
