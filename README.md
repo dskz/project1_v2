@@ -241,7 +241,7 @@ variable "namespace" {
 }
 variable "region" {
   description = "AWS region"
-  default     = "eu-west-1"
+  default     = "us-east-1"
 }
 variable "ssh_keypair" {
   description = "SSH keypair to use for autoscaling"
@@ -313,5 +313,5 @@ terraform destroy
 ### Notes
 
 *  Please make sure modify correct path of user_data under webserver aws launch template resources in asg.tf
-*  Default region is "eu-west-1". Modify the default region in provider.tf
+*  Default region is "us-east-1". Modify the default region in provider.tf
 
