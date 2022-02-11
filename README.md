@@ -30,7 +30,7 @@ This project builds a three-tier network configuration in AWS.We will create a t
  
  [Variables](https://github.com/dskz/project1_v2/edit/master/README.md#rvariabletf) 
  
- [Database Userdata](https://github.com/dskz/project1_v2/edit/master/README.md#wordpresssh)  
+ [DB Usedata](https://github.com/dskz/project1_v2/edit/master/README.md#wordpresssh)  
   
  [Initilaze Terraform](https://github.com/dskz/project1_v2/edit/master/README.md#initilazing-the-terraform)
  
