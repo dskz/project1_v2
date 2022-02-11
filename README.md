@@ -18,23 +18,23 @@ This project builds a three-tier network configuration in AWS.We will create a t
  
  [Prerequisites](https://github.com/dskz/project1_v2/edit/master/README.md#prerequisites) 
  
- [Provider](https://github.com/dskz/project1_v2/edit/master/README.md#providertf)  
+ [provider.tf](https://github.com/dskz/project1_v2/edit/master/README.md#providertf)  
  
- [Virtual Private Cloud](https://github.com/dskz/project1_v2/edit/master/README.md#vpctf)  
+ [vpc.tf](https://github.com/dskz/project1_v2/edit/master/README.md#vpctf)  
  
- [Auto Scaling Group/Load Balancer](https://github.com/dskz/project1_v2/edit/master/README.md#asgtf) 
+ [asg.tf](https://github.com/dskz/project1_v2/edit/master/README.md#asgtf) 
  
- [Database](https://github.com/dskz/project1_v2/edit/master/README.md#dbtf) 
+ [db.tf](https://github.com/dskz/project1_v2/edit/master/README.md#dbtf) 
  
- [Route53](https://github.com/dskz/project1_v2/edit/master/README.md#route53tf)  
+ [route53.tf](https://github.com/dskz/project1_v2/edit/master/README.md#route53tf)  
  
- [Variables](https://github.com/dskz/project1_v2/edit/master/README.md#rvariabletf) 
+ [variables.tf](https://github.com/dskz/project1_v2/edit/master/README.md#rvariabletf) 
  
- [DB Usedata](https://github.com/dskz/project1_v2/edit/master/README.md#wordpresssh)  
+ [wordpress.sh](https://github.com/dskz/project1_v2/edit/master/README.md#wordpresssh)  
   
- [Initilaze Terraform](https://github.com/dskz/project1_v2/edit/master/README.md#initilazing-the-terraform)
+ [Initilazing the Terraform]https://github.com/dskz/project1_v2/edit/master/README.md#initilazing-the-terraform)
  
- [Deleting the Resources](https://github.com/dskz/project1_v2/edit/master/README.md#deleting-the-resources) 
+ [Deleting the Resources(https://github.com/dskz/project1_v2/edit/master/README.md#deleting-the-resources) 
  
  [Notes](https://github.com/dskz/project1_v2/edit/master/README.md#notes)  
  
