@@ -313,5 +313,5 @@ terraform destroy
 ### Notes
 
 *  Please make sure modify correct path of user_data under webserver aws launch template resources in asg.tf
-*  Default region is "us-west-1". Modify the default region in provider.tf
+*  Default region is "eu-west-1". Modify the default region in provider.tf
 
