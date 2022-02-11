@@ -18,19 +18,19 @@ This project builds a three-tier network configuration in AWS.We will create a t
  
 [Prerequisites](https://github.com/dskz/project1_v2#prerequisites) 
  
-[provider.tf](https://github.com/dskz/project1_v2#providertf)  
+[Provider](https://github.com/dskz/project1_v2#providertf)  
  
-[vpc.tf](https://github.com/dskz/project1_v2#vpctf)  
+[Virtual Private Cloud](https://github.com/dskz/project1_v2#vpctf)  
  
-[asg.tf](https://github.com/dskz/project1_v2#asgtf) 
+[Auto Scaling Group/Load Balancer](https://github.com/dskz/project1_v2#asgtf) 
  
-[db.tf](https://github.com/dskz/project1_v2#dbtf) 
+[Database](https://github.com/dskz/project1_v2#dbtf) 
  
-[route53.tf](https://github.com/dskz/project1_v2#route53tf)  
+[Route53](https://github.com/dskz/project1_v2#route53tf)  
  
-[variables.tf](https://github.com/dskz/project1_v2#rvariabletf) 
+[Variables](https://github.com/dskz/project1_v2#rvariabletf) 
  
-[wordpress.sh](https://github.com/dskz/project1_v2#wordpresssh)  
+[DB Userdata](https://github.com/dskz/project1_v2#wordpresssh)  
   
 [Initilazing the Terraform](https://github.com/dskz/project1_v2#initilazing-the-terraform)
  
